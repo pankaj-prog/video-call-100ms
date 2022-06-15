@@ -1,7 +1,29 @@
-import "./App.css";
+import React, { useEffect } from "react";
+import {
+  selectIsConnectedToRoom,
+  useHMSActions,
+  useHMSStore,
+} from "@100mslive/react-sdk";
+import { Header, JoinForm, MeetingRoom } from "./components";
 
 function App() {
-  return <div className="App">Video Call - 100ms</div>;
+  const hmsActions = useHMSActions();
+  const isConnected = useHMSStore(selectIsConnectedToRoom);
+
+  useEffect(() => {
+    window.onunload = () => {
+      if (isConnected) {
+        hmsActions.leave();
+      }
+    };
+  }, [hmsActions, isConnected]);
+
+  return (
+    <div className="app">
+      <Header />
+      {isConnected ? <MeetingRoom /> : <JoinForm />}
+    </div>
+  );
 }
 
 export default App;

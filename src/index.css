@@ -1,0 +1,18 @@
+@import url("./App.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(55, 55, 55);
+  color: rgb(242, 242, 242);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,60 @@
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 0.5rem;
+  box-shadow: 0px 0px 10px 0 black;
+}
+
+.form-wrapper {
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.form-wrapper input {
+  padding: 4px;
+}
+
+.form-wrapper button {
+  margin-left: 4px;
+  padding: 4px 8px;
+}
+
+.meeting-room-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.meeting-room-header {
+  padding: 0.5rem 0;
+}
+
+.peers-wrapper {
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.peer video {
+  border-radius: 20px;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+
+.controls-wrapper {
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 0px 0px 10px 0 black;
+}
+
+.controls-wrapper button {
+  font-size: large;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+}
